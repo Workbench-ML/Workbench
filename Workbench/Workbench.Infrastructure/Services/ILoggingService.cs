@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Workbench.Infrastructure.Services
 {
-    interface ILoggingService 
+    public interface ILoggingService 
     {
         void Info(object message);
         void Debug(object message);

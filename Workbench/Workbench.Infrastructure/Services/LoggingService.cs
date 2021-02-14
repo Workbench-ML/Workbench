@@ -1,35 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using log4net;
+using System;
 
 namespace Workbench.Infrastructure.Services
 {
-    class LoggingService : ILoggingService
+    public class LoggingService : ILoggingService
     {
+        public static string OutputTitle => "Workbench";
+
+        private readonly ILog logger;
         public LoggingService()
         {
-
+            logger = LogManager.GetLogger(OutputTitle);
         }
+
         public void Debug(object message)
         {
-            throw new NotImplementedException();
+            logger.Debug(message);
         }
 
         public void Error(object message, Exception ex = null)
         {
-            throw new NotImplementedException();
+            logger.Error(message);
         }
 
         public void Info(object message)
         {
-            throw new NotImplementedException();
+            logger.Info(message);
         }
 
         public void Warn(object message, Exception ex = null)
         {
-            throw new NotImplementedException();
+            logger.Warn(message);
         }
     }
 }

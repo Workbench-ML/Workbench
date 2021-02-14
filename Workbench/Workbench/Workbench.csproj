@@ -2,19 +2,17 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net48</TargetFramework>
+    <TargetFrameworks>net48</TargetFrameworks>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Extended.Wpf.Toolkit" Version="4.0.2" />
     <PackageReference Include="log4net" Version="2.0.12" />
-    <PackageReference Include="Ninject" Version="3.3.4" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Workbench.Infrastructure\Workbench.Infrastructure.csproj" />
-    <ProjectReference Include="..\Workbench.Runtime.Net\Workbench.Runtime.csproj" />
   </ItemGroup>
 
 </Project>

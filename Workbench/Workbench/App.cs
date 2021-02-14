@@ -1,11 +1,10 @@
-﻿using Ninject;
-using Ninject.Modules;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Windows;
-
-using Workbench.Infrastructure;
+using Workbench.Infrastructure.DI;
+using Workbench.Infrastructure.Services;
 using Workbench.ViewModels;
 using Workbench.Views;
 
@@ -13,14 +12,12 @@ namespace Workbench
 {
     class App : Application
     {
-        private IKernel _kernel;
-        private readonly List<INinjectModule> _modules;
+        public IDependencyInjectionEngine DependencyInjectionEngine { get; private set; }
+
+        private ILoggingService loggingService;
         public App()
         {
-            _modules = new List<INinjectModule>()
-            {
-                new InfrastructureModule()
-            };
+            DependencyInjectionEngine = new NinjectEngine();
         }
 
         private void CreateWorkbenchWindow()
@@ -33,8 +30,9 @@ namespace Workbench
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-            _kernel = new StandardKernel(_modules.ToArray());
-
+            DependencyInjectionEngine.LoadAssembly(Assembly.GetExecutingAssembly());
+            loggingService = DependencyInjectionEngine.Get<ILoggingService>();
+            loggingService.Info("Welcome to Workbench");
             CreateWorkbenchWindow();
         }
 
