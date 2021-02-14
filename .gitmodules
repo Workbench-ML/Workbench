@@ -4,3 +4,4 @@
 [submodule "packages/mono-workbench"]
 	path = packages/mono-workbench
 	url = https://github.com/Workbench-ML/mono.git
+	branch = workbench-mono
