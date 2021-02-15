@@ -1,7 +1,7 @@
 # Workbench
 Valheim dedicated server administration tool / plugin support
  ---
- Workbench is an open-source Valheim dedicated server administration tool. Like CraftBukkit for Minecraft, this utility and framework aims to aid in the administeration/deployment of Valheim dedicated servers. It also exposes a system for injection of C# .Net standard 2.0 compliant server-sided plugins as well as an API for interacting with Valheim game-layer code and data structures. 
+ Workbench is an open-source Valheim dedicated server administration tool. Like CraftBukkit for Minecraft, this utility and framework aims to aid in the administeration/deployment of Valheim dedicated servers. It also exposes a system for injection of C# .NET standard 2.0 compliant server-sided plugins as well as an API for interacting with Valheim game-layer code and data structures. 
 
  #### Platform compatibility chart
  Valheim and Valheim dedicated server currently only target mono on all platforms
