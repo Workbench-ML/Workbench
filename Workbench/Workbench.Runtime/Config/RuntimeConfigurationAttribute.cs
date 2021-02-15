@@ -7,9 +7,6 @@ namespace Workbench.Runtime.Config
     {
         public string ConfigFile { get; set; }
         
-        public RuntimeConfigurationAttribute()
-        {
-
-        }
+        public RuntimeConfigurationAttribute() { }
     }
 }

@@ -10,6 +10,8 @@ namespace Workbench.Infrastructure
         public override void Load()
         {
             Bind<ILoggingService>().To<LoggingService>();
+            Bind<IDirectoryService>().To<NTFSDirectoryService>();
+            NTFSDirectoryService.VERBOSE = true;
         }
     }
 }

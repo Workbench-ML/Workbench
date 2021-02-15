@@ -5,10 +5,10 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Workbench.Runtime")]
-[assembly: AssemblyDescription("Workbench CLR Runtime")]
+[assembly: AssemblyTitle("Workbench.Test.Plugin")]
+[assembly: AssemblyDescription("Workbench Test Plugin")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyProduct("Workbench.Runtime")]
+[assembly: AssemblyProduct("Workbench.Test.Plugin")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -33,5 +33,4 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
 
-//Log4net config
-[assembly: Workbench.Runtime.Config.RuntimeConfiguration(ConfigFile = "Workbench/Config/workbench.config")]
+[assembly: Workbench.Runtime.Plugin.WorkbenchPlugin(VersionString ="1.0.0.0")]
