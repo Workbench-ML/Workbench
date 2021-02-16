@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Ninject;
@@ -30,6 +31,11 @@ namespace Workbench.Infrastructure.DI
             {
                 _injectionKernel.Bind(type).To(binding);
             }
+        }
+
+        public IEnumerable<T> GetAll<T>()
+        {
+            return _injectionKernel.GetAll<T>();
         }
 
         public T Get<T>() 

@@ -10,6 +10,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="assembly_valheim">
+      <HintPath>..\ValheimBinaries\assembly_valheim.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="Config\Workbench.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
