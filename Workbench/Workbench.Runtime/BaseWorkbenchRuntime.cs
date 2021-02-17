@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Workbench.Infrastructure.DI;
+using Workbench.Infrastructure.Events;
 using Workbench.Infrastructure.Services;
 using Workbench.Runtime.Config;
 using Workbench.Runtime.Plugin;
@@ -19,12 +20,15 @@ namespace Workbench.Runtime
 
         private List<IWorkbenchPlugin> _loadedPlugins = new List<IWorkbenchPlugin>();
 
+        private IEventBus _eventBus;
+
         public BaseWorkbenchRuntime(IDependencyInjectionEngine di)
         {
             _dependencyInjectionEngine = di;
 
             di.Inject(ref _loggingService);
             di.Inject(ref _directoryService);
+            di.Inject(ref _eventBus);
 
             Config = new WorkbenchRuntimeConfig(di);
         }
@@ -87,6 +91,11 @@ namespace Workbench.Runtime
         private void PrintVersionInfo()
         {
             _loggingService.Info(WorkbenchRuntime.RuntimeAssembly.GetName().Version);
+        }
+
+        public void RegisterEventListener(IEventListener eventListener)
+        {
+            _eventBus.RegisterListener(eventListener);
         }
     }
 }
